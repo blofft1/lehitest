@@ -1,0 +1,182 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.visitmyrtlebeach.com/"
+      ],
+      "description": "Visit Myrtle Beach homepage with hero, promotional content sections, and travel information",
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [
+            ".component--hero-with-trending"
+          ]
+        },
+        {
+          "name": "carousel",
+          "instances": [
+            ".component--related-content.slideshow"
+          ]
+        },
+        {
+          "name": "embed",
+          "instances": [
+            ".component--fuel-date-selector",
+            ".component--videos-by-tag"
+          ]
+        },
+        {
+          "name": "card",
+          "instances": [
+            ".component--four-column-promo.up-3",
+            ".component--four-column-promo.up-4",
+            ".component--related-events",
+            ".component--featured-places:first-of-type",
+            ".component--featured-places.untitled",
+            ".component--featured-places.last-of-class"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero with Trending Badge",
+          "selector": ".component--hero-with-trending",
+          "style": null,
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Beach Buzz Carousel",
+          "selector": ".component--related-content.slideshow",
+          "style": null,
+          "blocks": [
+            "carousel"
+          ],
+          "defaultContent": [
+            ".component--related-content.slideshow h2"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Booking Widget",
+          "selector": ".component--fuel-date-selector",
+          "style": null,
+          "blocks": [
+            "embed"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "Main Content / About",
+          "selector": ".component--main-content",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".component--main-content"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "Quick Links Cards (3-up)",
+          "selector": ".component--four-column-promo.up-3",
+          "style": null,
+          "blocks": [
+            "card"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6",
+          "name": "60 Miles Where You Belong",
+          "selector": [
+            ".component--custom-markup.full-width:nth-of-type(4)",
+            ".component--four-column-promo.up-4"
+          ],
+          "style": "dark-teal",
+          "blocks": [
+            "card"
+          ],
+          "defaultContent": [
+            ".component--custom-markup.full-width"
+          ]
+        },
+        {
+          "id": "section-7",
+          "name": "Video Gallery",
+          "selector": ".component--videos-by-tag",
+          "style": null,
+          "blocks": [
+            "embed"
+          ],
+          "defaultContent": [
+            ".component--videos-by-tag h2"
+          ]
+        },
+        {
+          "id": "section-8",
+          "name": "Upcoming Events",
+          "selector": ".component--related-events",
+          "style": null,
+          "blocks": [
+            "card"
+          ],
+          "defaultContent": [
+            ".component--related-events h2"
+          ]
+        },
+        {
+          "id": "section-9",
+          "name": "Food & Drink",
+          "selector": ".component--featured-places:first-of-type",
+          "style": null,
+          "blocks": [
+            "card"
+          ],
+          "defaultContent": [
+            ".component--featured-places h2"
+          ]
+        },
+        {
+          "id": "section-10",
+          "name": "Attractions",
+          "selector": ".component--featured-places.untitled",
+          "style": null,
+          "blocks": [
+            "card"
+          ],
+          "defaultContent": [
+            ".component--featured-places.untitled h2"
+          ]
+        },
+        {
+          "id": "section-11",
+          "name": "Hotels, Condos & Beach Homes",
+          "selector": ".component--featured-places.last-of-class",
+          "style": null,
+          "blocks": [
+            "card"
+          ],
+          "defaultContent": [
+            ".component--featured-places.last-of-class h2"
+          ]
+        },
+        {
+          "id": "section-12",
+          "name": "Newsletter Signup",
+          "selector": ".component--promo",
+          "style": "coral",
+          "blocks": [],
+          "defaultContent": [
+            ".component--promo"
+          ]
+        }
+      ]
+    }
+  ]
+}
