@@ -1,118 +1,50 @@
-# Author Kit
-For projects that want a few more batteries. Built by the team who brought you da.live and adobe.com.
+# EDS Project (Author Kit Baseline)
 
-## Getting started
+Edge Delivery Services project built on the [Author Kit](https://github.com/aemsites/author-kit) template with Document Authoring (DA).
 
-### 1. Github
-1. Use this template to make a new repo.
+## Getting Started
+
+### 1. GitHub
 1. Install [AEM Code Sync](https://da.live/bot).
 
-### 2. DA content
+### 2. DA Content
 1. Browse to https://da.live/start.
 2. Follow the steps.
 
-### 3. Local development
-1. Clone your new repo to your computer.
-1. Install the AEM CLI using your terminal: `sudo npm install -g @adobe/aem-cli`
-1. Start the AEM CLI: `aem up`.
-1. Open the `{repo}` folder in your favorite code editor and buil something.
-1. **Recommended:** Install common npm packages like linting and testing: `npm i`.
+### 3. Local Development
+1. Clone the repo.
+2. Install the AEM CLI: `sudo npm install -g @adobe/aem-cli`
+3. Start local dev: `aem up`
+4. Install dev dependencies: `npm i`
 
-## Features
+## Author Kit Block Library
 
-### Localization & globalization
-* Language only support - Ex: en, de, hi, ja
-* Region only support - Ex: en-us, en-ca, de-de, de-ch
-* Hybrid support - Ex: en, en-us, de, de-ch, de-at
-* Fragment-based localized 404s
-* Localized Header & Footer
-* Do not translate support (#_dnt)
+| Block | Purpose |
+|-------|---------|
+| `hero` | Full-width hero with background image/video, foreground text, variants: small, large, full, light, dark, stack, center |
+| `card` | Content card with image, text, and CTA |
+| `columns` | Multi-column layout with optional image-cover variant |
+| `advanced-tabs` | Tabbed content across sections |
+| `table` | Structured data table |
+| `youtube` | Embedded YouTube video (auto-block from link) |
+| `section-metadata` | Section styling: background, grid, gap, spacing, layout |
+| `fragment` | Load and inject content fragments |
+| `header` | Site header with brand, nav, mega menu, actions |
+| `footer` | Site footer with legal and copyright sections |
+| `schedule` | Time-based content scheduling |
 
-### Flexible section authoring
-* Optional containers to constrain content
-* Grids: 1-6
-* Columns: 1-12
-* Color scheme: light, dark
-* Gap: xs, s, m, l, xl, xxl
-* Spacing: xs, s, m, l, xl, xxl
-* Background: token / image / color / gradient
+## Architecture
 
-### Base content
-* Universal buttons w/ extensive styles
-* Images w/ retina breakpoint
-* Color scheme support: light, dark
-* Modern favicon support
-* New window support
-* Deep link support
-* Modal support
+See [INSTRUCTIONS.md](./INSTRUCTIONS.md) for migration rules and block conventions.
+See [CONTENT_PLAN.md](./CONTENT_PLAN.md) for content structure after baseline cleanup.
 
-### Header and footer content
-* Brand - First link in header
-* Main Menu - First list in header
-* Actions - Last section of header
-* Menu & mega menu support
-* Disable header/footer via meta props
+## Author Kit Features
 
-### Scheduled content
-* Schedule content using spreadsheets
-
-### Sidekick & pre-production
-* Quick Edit
-* Extensible plumbing for plugins
-* Schedule simulator
-* Convert production links to relative
-
-### Performance
-* Extensible LCP detection
-
-### Developer tools
-* Environment detection
-* Extensible logging (console, coralogix, splunk, etc.)
-* Buildless reactive framework support (Lit)
-* Hash utils patterns (#_blank, #_dnt, etc)
-* Modern CSS scoping & nesting
-* AEM Operational Telemetry
-
-### Operations
-* Cloudflare Worker reference implementation
-
-## Patterns
-### Page
-A page is what holds your content. It can be styled using a metadata property called `template` which will load styles that apply to the entire page.
-
-### Section
-A section is a sub-section of your page. It can be styled using a `section-metadata` block. A section will control the layout of blocks.
-
-### Block
-Blocks are children of sections. A block adds visual context to parts of a page.
-
-### Auto Block
-An auto block is a block generated from a pre-defined piece of content. Often times from a link that matches a particular pattern. Link-based auto blocks can be helpful when additional nesting of content is required.
-
-### Default content
-Default content is content that lives outside a block.
-
-## Design System
-
-### Spacing & Gap
-XS, S, M, L, XL, XXL
-
-### Emphasis
-quiet, default, strong, negative
-
-### Buttons
-accent, primary, secondary, negative
-(w/ outline variations)
-
-### Columns
-1 - 12
-
-### Grid
-1 - 6
-
-### Color tokens
-blue, gray, green, magenta, organge, red, purple, yellow
-(w/ 100-900 variations)
-
-### Color schemes
-light, dark
+- Localization (en, de, es, fr, hi, ja, zh)
+- Section metadata: grid, gap, spacing, background, layout
+- Button styles: accent, primary, secondary, negative (w/ outline)
+- Color tokens: blue, gray, green, magenta, orange, red, purple, yellow (100-900)
+- Light/dark color scheme support
+- Scheduled content via spreadsheets
+- Sidekick plugins: Quick Edit, Schedule Simulator
+- Cloudflare Worker reference implementation

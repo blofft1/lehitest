@@ -1,7 +1,5 @@
-# Robots.txt - Friendly to LLM and SEO crawlers
-# Last updated: 2025-07-23
+# Robots.txt
+# TODO: Update sitemap URL after site deployment
 
 User-agent: *
 Allow: /
-
-Sitemap: https://docs.da.live/sitemap.xml

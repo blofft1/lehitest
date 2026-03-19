@@ -1,3 +1,4 @@
+# TODO: Update name, AEM_ORG, and AEM_SITE for your project
 name = "ak-website"
 main = "index.js"
 compatibility_date = "2025-02-14"
