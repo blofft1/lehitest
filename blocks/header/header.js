@@ -110,9 +110,14 @@ async function decorateAction(header, pattern) {
   if (pattern === '/tools/widgets/toggle') decorateNavToggle(btn);
 }
 
-function decorateMenu() {
-  // TODO: finish single menu support
-  return null;
+function decorateMenu(li) {
+  const nestedList = li.querySelector(':scope > ul');
+  if (!nestedList) return null;
+  const wrapper = document.createElement('div');
+  wrapper.className = 'menu';
+  wrapper.append(nestedList);
+  li.append(wrapper);
+  return wrapper;
 }
 
 function decorateMegaMenu(li) {
@@ -130,11 +135,13 @@ function decorateNavItem(li) {
   const link = li.querySelector(':scope > p > a');
   if (link) link.classList.add('main-nav-link');
   const menu = decorateMegaMenu(li) || decorateMenu(li);
-  if (!(menu || link)) return;
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    toggleMenu(li);
-  });
+  if (!menu) return;
+  if (link) {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleMenu(li);
+    });
+  }
 }
 
 function decorateBrandSection(section) {

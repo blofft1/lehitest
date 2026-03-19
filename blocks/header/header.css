@@ -1,6 +1,6 @@
 header {
-  --logo-width: 40px;
-  --logo-height: 40px;
+  --logo-width: 50px;
+  --logo-height: 50px;
   --mega-columns: 4;
 
   display: block;
@@ -11,7 +11,7 @@ header {
   z-index: 1000;
   overflow: hidden;
   max-height: var(--header-height);
-  background-color: light-dark(var(--color-light), var(--color-dark));
+  background-color: var(--color-darker-teal, #25454c);
 
   ul {
     margin: 0;
@@ -26,6 +26,7 @@ header {
 
   a {
     text-decoration: none;
+    color: var(--color-cream, #fff8f0);
   }
 
   .btn {
@@ -136,10 +137,11 @@ header {
         font-weight: 700;
         text-decoration: none;
         margin: 0;
-        color: var(--color-brand);
+        color: var(--color-cream, #fff8f0);
 
         img {
           height: var(--logo-height);
+          width: auto;
         }
 
         svg {
@@ -166,6 +168,7 @@ header {
     max-height: 64px;
     overflow: hidden;
     transition: all 0.2s ease-in-out;
+    color: var(--color-cream, #fff8f0);
 
     > .default-content {
       display: flex;
@@ -174,7 +177,7 @@ header {
     }
 
     > .block-content {
-      border-bottom: 1px solid light-dark(var(--color-gray-200), var(--color-gray-600));
+      border-bottom: 1px solid rgb(255 255 255 / 15%);
     }
 
     .action-wrapper {
@@ -201,7 +204,7 @@ header {
     }
 
     .main-nav-item {
-      border-bottom: 1px solid light-dark(var(--color-gray-200), var(--color-gray-600));
+      border-bottom: 1px solid rgb(255 255 255 / 15%);
 
       > * {
         max-width: var(--grid-container-width);
@@ -211,7 +214,13 @@ header {
 
     .main-nav-link {
       display: block;
-      line-height: 64px;
+      line-height: var(--header-height);
+      font-size: var(--body-font-size-s, 14px);
+      font-family: var(--heading-font-family);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      color: var(--color-cream, #fff8f0);
     }
 
     .menu,
@@ -221,13 +230,18 @@ header {
 
     .is-open {
       .main-nav-link {
-        border-bottom: 1px solid light-dark(var(--color-gray-200), var(--color-gray-600));
+        border-bottom: 1px solid rgb(255 255 255 / 15%);
       }
 
       .menu,
       .mega-menu {
         display: block;
       }
+    }
+
+    .menu a {
+      color: var(--color-cream, #fff8f0);
+      font-size: var(--body-font-size-s, 14px);
     }
   }
 
@@ -242,7 +256,7 @@ header {
     }
 
     .brand-section {
-      border-bottom: 1px solid light-dark(var(--color-gray-200), var(--color-gray-600));
+      border-bottom: 1px solid rgb(255 255 255 / 15%);
     }
   }
 }
@@ -260,8 +274,8 @@ header {
 
     .menu,
     .mega-menu {
-      background-color: var(--color-shaded);
-      padding: var(--spacing-xl) 0;
+      background-color: var(--color-dark-teal, #264e57);
+      padding: var(--spacing-xl) var(--spacing-l);
       position: absolute;
       left: 0;
       right: 0;
@@ -301,7 +315,8 @@ header {
         margin: 0;
       }
 
-      .action-wrapper.more {
+      .action-wrapper.more,
+      .action-wrapper.toggle {
         display: none;
       }
     }
@@ -309,7 +324,8 @@ header {
     .main-nav-section {
       .main-nav-list {
         display: flex;
-        gap: var(--spacing-l);
+        gap: var(--spacing-m, 16px);
+        align-items: center;
       }
 
       .main-nav-item {
@@ -335,6 +351,16 @@ header {
       .default-content {
         max-width: initial;
         margin: 0;
+        height: var(--header-height);
+        align-items: center;
+      }
+
+      a {
+        font-family: var(--heading-font-family);
+        text-transform: uppercase;
+        font-size: var(--body-font-size-s, 14px);
+        letter-spacing: 0.05em;
+        white-space: nowrap;
       }
 
       .action-wrapper {
