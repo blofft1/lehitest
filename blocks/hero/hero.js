@@ -8,13 +8,13 @@ function setBackgroundFocus(img) {
 
 function decorateBackground(bg) {
   const bgPic = bg.querySelector('picture');
-  if (!bgPic) return;
+  const bgImg = bgPic?.querySelector('img') || bg.querySelector('img');
+  if (!bgImg) return;
+  if (bgPic) setBackgroundFocus(bgImg);
 
-  const img = bgPic.querySelector('img');
-  setBackgroundFocus(img);
-
-  const vidLink = bgPic.closest('a[href*=".mp4"]');
+  const vidLink = bgImg.closest('a[href*=".mp4"]');
   if (!vidLink) return;
+  const poster = bgPic || bgImg;
   const video = document.createElement('video');
   video.src = vidLink.href;
   video.loop = true;
@@ -25,9 +25,9 @@ function decorateBackground(bg) {
   video.load();
   video.addEventListener('canplay', () => {
     video.play();
-    bgPic.remove();
+    poster.remove();
   });
-  vidLink.parentElement.append(video, bgPic);
+  vidLink.parentElement.append(video, poster);
   vidLink.remove();
 }
 
@@ -55,8 +55,30 @@ function decorateForeground(fg) {
   }
 }
 
+function decorateBanner(el, rows) {
+  const bg = rows.shift();
+  bg.classList.add('hero-background');
+  decorateBackground(bg);
+
+  if (rows.length >= 2) {
+    const badge = rows.shift();
+    badge.classList.add('hero-badge');
+  }
+
+  if (rows.length) {
+    const cta = rows.shift();
+    cta.classList.add('hero-cta');
+  }
+}
+
 export default async function init(el) {
   const rows = [...el.querySelectorAll(':scope > div')];
+
+  if (el.classList.contains('banner')) {
+    decorateBanner(el, rows);
+    return;
+  }
+
   const fg = rows.pop();
   fg.classList.add('hero-foreground');
   decorateForeground(fg);
